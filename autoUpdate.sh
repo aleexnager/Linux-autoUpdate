@@ -14,8 +14,8 @@ fi
 #config.cfg
 function conf0(){ #write in conf_file for auto=0
     sudo bash -c "echo 'password="$password"' > "$conf_file"" #write in conf_file
-    echo prevDate="$prevDate" >> "$conf_file" | sudo tee -a /etc/apt/sources.list > /dev/null
-    echo auto="$auto" >> "$conf_file" | sudo tee -a /etc/apt/sources.list > /dev/null
+    echo prevDate="$prevDate" | sudo tee -a "$conf_file" > /dev/null
+    echo auto="$auto" | sudo tee -a "$conf_file" > /dev/null
 }
 
 function conf1(){ #write in conf_file for auto=1
