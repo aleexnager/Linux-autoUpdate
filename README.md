@@ -29,6 +29,6 @@ You can combine some of this methods in order to get various effects. For exampl
 ## FAQ
 - In order to see if you had give the correct permissions to the script use `$ ls -l` in the same folder as the script. It should look somewhat like this: 
   - Before -> **-rwxr--r--** 1 alex alex 3875 Feb 20 20:27 autoUpdate.sh.
-  - After&nbsp -> **-rwxr-xr-x** 1 alex alex 3875 Feb 20 20:27 autoUpdate.sh.
+  - After &nbsp -> **-rwxr-xr-x** 1 alex alex 3875 Feb 20 20:27 autoUpdate.sh.
 - In order to find any hidden file like .bashrc use `$ ls -a`.
 - There is no need in changing the script itself but you can modify it if you want to.  
