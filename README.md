@@ -27,7 +27,7 @@ If you move the script and the config.cfg to the same folder as .bashrc you can 
 You can combine some of this methods in order to get various effects. For example, you can combine methods 2 and 3 so that the program will execute everytime you open a bash terminal AND when ever you call it. Just add both options to the .bashrc file.
 
 ## FAQ
-- In order to see if u had give the correct permissions to the script use `$ ls -l` in the same folder as the script. It should look somewhat like this: 
+- In order to see if you had give the correct permissions to the script use `$ ls -l` in the same folder as the script. It should look somewhat like this: 
   - Before -> **-rwxr--r--** 1 alex alex 3875 Feb 20 20:27 autoUpdate.sh.
   - After -> **-rwxr-xr-x** 1 alex alex 3875 Feb 20 20:27 autoUpdate.sh.
 - In order to find any hidden file like .bashrc use `$ ls -a`.
