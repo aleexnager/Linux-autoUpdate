@@ -16,7 +16,7 @@ $ ./autoUpdate.sh
 ```
 If everything works properly, you can now choose between the 4 different options to fully automate your updates. Each option works slightly different.
 ### 1. /etc/init.d folder 
-The program will execute when your machine starts. You will need to move both the script and the config.cfg file to /etc/init.d
+The program will execute when your machine starts. You will need to move both the script and config.cfg to a `.conf` file like `/etc/init.d`.
 ### 2. .bashrc file
 The program will execute everytime you open a bash terminal. You can have both the script and the config.cfg file where ever you want but always together. Inside the .bashrc file you can just write; `cd path/to/script/ && ./autoUpdate.sh`.  
 If you move the script and the config.cfg to the same folder as .bashrc you can simply write; `./autoUpdate.sh` at the end of the .bashrc file.
