@@ -15,7 +15,7 @@ With your password already set, it is highly recommended to first try the script
 $ ./autoUpdate.sh
 ```
 If everything works properly, you can now choose between the 4 different options to fully automate your updates. Each option works slightly different.
-### 1. /etc/init.d folder 
+### 1. /etc/init.d folder [WORKING ON IT]
 The program will execute when your machine starts. You will need to move both the script and config.cfg to a `.conf` file like `/etc/init.d`. From the file where you have the script write;
 ```
 $ update-rc.d autoUpdate.sh defaults 80 && cp autoUpdate.sh config.cfg /etc/init.d
