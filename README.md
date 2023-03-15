@@ -23,7 +23,7 @@ If you move the script and the config.cfg to the same folder as .bashrc you can 
 ### 3. alias in the .bashrc file
 The program will execute when ever you call it. You can have both the script and the config.cfg file where ever you want but always together. Inside the .bashrc file you can just write; `alias update="cd path/to/script/ && ./autoUpdate.sh"`.  
 If you move the script and the config.cfg to the same folder as .bashrc you can simply write; `alias update="./autoUpdate.sh"` at the end of the .bashrc file.
-### 4. Combination
+### 4. Combination [RECOMMENDED]
 You can combine some of this methods in order to get various effects. For example, you can combine methods 2 and 3 so that the program will execute everytime you open a bash terminal AND when ever you call it. Just add both options to the .bashrc file.
 
 ## FAQ
