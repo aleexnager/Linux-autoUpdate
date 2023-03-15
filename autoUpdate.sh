@@ -13,15 +13,15 @@ fi
 #---------------FUNCTIONS---------------
 #config.cfg
 function conf0(){ #write in conf_file for auto=0
-    echo password="$password" > "$conf_file" #write in conf_file
-    echo prevDate="$prevDate" >> "$conf_file"
-    echo auto="$auto" >> "$conf_file"
+    sudo bash -c "echo 'password="$password"' > "$conf_file"" #write in conf_file
+    echo prevDate="$prevDate" >> "$conf_file" | sudo tee -a /etc/apt/sources.list > /dev/null
+    echo auto="$auto" >> "$conf_file" | sudo tee -a /etc/apt/sources.list > /dev/null
 }
 
 function conf1(){ #write in conf_file for auto=1
-    echo password="$password" > "$conf_file" #write in conf_file
-    echo prevDate="$today" >> "$conf_file"
-    echo auto="$auto" >> "$conf_file"
+    sudo bash -c "echo 'password="$password"' > "$conf_file"" #write in conf_file
+    echo prevDate="$today" | sudo tee -a "$conf_file" > /dev/null
+    echo auto="$auto" | sudo tee -a "$conf_file" > /dev/null
 }
 
 #update-upgrade
@@ -70,7 +70,7 @@ for arg in "$@"; do
 	help
 	info
         exit 0
-    elif [ "$arg" == "-a"] || [ "$arg" == "-auto" ]; then #modes
+    elif [ "$arg" == "-a" ] || [ "$arg" == "-auto" ]; then #modes
 	info
 	if [ $auto -eq 0 ]; then
 	    echo "You are actually in manual mode. Do you want to change to automatic mode? [yes/no]"
