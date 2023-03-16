@@ -23,6 +23,7 @@ function config(){ #write conf_file
 
 #update-upgrade
 function update(){
+    #mute every message except WARNING
     if [ $mute -eq 2 ]; then
 	echo $password | sudo -S apt-get update > /dev/null
 	sudo apt-get upgrade -y > /dev/null
@@ -36,6 +37,7 @@ function update(){
 	    echo -e "\e[1mWARNING:\e[0m Updates failed to install.\n" 1>&2
 	    exit 255
 	fi
+    #mute every message except WARNING and completation messages
     elif [ $mute -eq 1 ]; then
 	echo $password | sudo -S apt-get update > /dev/null
 	sudo apt-get upgrade -y > /dev/null
@@ -50,6 +52,7 @@ function update(){
 	    echo -e "\e[1mWARNING:\e[0m Updates failed to install.\n" 1>&2
 	    exit 255
 	fi
+    #mute no message
     else
 	echo $password | sudo -S apt-get update
 	sudo apt-get upgrade -y
