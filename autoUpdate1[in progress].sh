@@ -19,9 +19,9 @@ function conf0(){ #write in conf_file for auto=0
 }
 
 function conf1(){ #write in conf_file for auto=1
-    sudo bash -c "echo 'password="$password"' > "$conf_file"" #write in conf_file
-    echo prevDate="$today" | sudo tee -a "$conf_file" > /dev/null
-    echo auto="$auto" | sudo tee -a "$conf_file" > /dev/null
+    echo $password | sudo -S bash -c "echo 'password="$password"' > "$conf_file"" #write in conf_file
+    echo $password | sudo -S bash -c "echo 'prevDate="$today"' >> "$conf_file""
+    echo $password | sudo -S bash -c "echo 'auto="$auto"' >> "$conf_file""
 }
 
 #update-upgrade
