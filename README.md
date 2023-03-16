@@ -37,7 +37,8 @@ alias update="./autoUpdate.sh"
 ```
 at the end of the .bashrc file.
 ### 4. Combination [RECOMMENDED]
-You can combine some of this methods in order to get various effects. For example, you can combine methods 2 and 3 so that the program will execute everytime you open a bash terminal AND when ever you call it. Just add both options to the .bashrc file.
+You can combine some of this methods in order to get various effects. For example, you can combine methods 2 and 3 so that the program will execute everytime you open a bash terminal AND when ever you call it. Just add both options to the .bashrc file.  
+Of course you can also implement different alias for the different options the program has. Just add the correct flag next to the executable the same way you would do it normally from the command promp.
 
 ## FAQ
 - In order to see if you had give the correct permissions to the script use `$ ls -l` in the same folder as the script. It should look somewhat like this: 
