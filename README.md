@@ -23,7 +23,7 @@ $ update-rc.d autoUpdate.sh defaults 80 && sudo cp autoUpdate.sh config.cfg /etc
 ### 2. .bashrc file
 The program will execute everytime you open a bash terminal. You can have both the script and the config.cfg file where ever you want but always together. Inside the `.bashrc` file you can just write;
 ```
-cd path/to/script/ && ./autoUpdate.sh && cd $OLDPWD`
+cd path/to/script/ && ./autoUpdate.sh && cd $OLDPWD
 ```
 If you move the script and the config.cfg to the same folder as .bashrc you can simply write; `./autoUpdate.sh` at the end of the .bashrc file.
 ### 3. alias in the .bashrc file
