@@ -16,7 +16,13 @@ $ ./autoUpdate.sh
 ```
 If everything works properly, you can now choose between the 4 different options to fully automate your updates. Each option works slightly different.
 ### 1. /etc/init.d folder [WORKING ON IT]
-<!-- http://somebooks.es/ejecutar-un-programa-automaticamente-al-iniciar-sesion-en-ubuntu-20-04-lts/ -->
+<!-- 
+buscar: carpeta autostart linux
+sale: El directorio /etc/xdg/autostart contiene aplicaciones que se inician para todos los usuarios del equipo. Si queremos que una aplicación se inicie sólo para un usuario en particular, deberemos ubicar el lanzador (el archivo con extensión . desktop) en el directorio ~/. config/autostart.
+http://somebooks.es/ejecutar-un-programa-automaticamente-al-iniciar-sesion-en-ubuntu-20-04-lts/ 
+https://geekflare.com/es/how-to-auto-start-services-on-boot-in-linux/
+http://somebooks.es/como-ver-y-administrar-todos-los-programas-que-se-ejecutan-al-iniciar-una-sesion-de-ubuntu-20-04-lts/#:~:text=El%20directorio%20%2Fetc%2Fxdg%2Fautostart%20contiene%20aplicaciones%20que%20se,config%2Fautostart.
+-->
 The program will execute when your machine starts. You will need to move both the script and config.cfg to a `.conf` file like `/etc/init.d`. From the file where you have the script write;
 ```
 $ update-rc.d autoUpdate.sh defaults && sudo cp autoUpdate.sh config.cfg /etc/init.d
