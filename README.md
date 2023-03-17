@@ -18,7 +18,7 @@ If everything works properly, you can now choose between the 4 different options
 ### 1. /etc/init.d folder [WORKING ON IT]
 The program will execute when your machine starts. You will need to move both the script and config.cfg to a `.conf` file like `/etc/init.d`. From the file where you have the script write;
 ```
-$ update-rc.d autoUpdate.sh defaults 80 && sudo cp autoUpdate.sh config.cfg /etc/init.d
+$ update-rc.d autoUpdate.sh defaults && sudo cp autoUpdate.sh config.cfg /etc/init.d
 ```
 ### 2. .bashrc file
 The program will execute everytime you open a bash terminal. You can have both the script and the config.cfg file where ever you want but always together. Inside the `.bashrc` file you can just write;
