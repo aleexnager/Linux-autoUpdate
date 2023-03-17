@@ -16,6 +16,7 @@ $ ./autoUpdate.sh
 ```
 If everything works properly, you can now choose between the 4 different options to fully automate your updates. Each option works slightly different.
 ### 1. /etc/init.d folder [WORKING ON IT]
+<!-- http://somebooks.es/ejecutar-un-programa-automaticamente-al-iniciar-sesion-en-ubuntu-20-04-lts/ -->
 The program will execute when your machine starts. You will need to move both the script and config.cfg to a `.conf` file like `/etc/init.d`. From the file where you have the script write;
 ```
 $ update-rc.d autoUpdate.sh defaults && sudo cp autoUpdate.sh config.cfg /etc/init.d
