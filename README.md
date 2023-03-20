@@ -49,8 +49,8 @@ Of course you can also implement different alias for the different options the p
 
 ## FAQ
 - In order to see if you had give the correct permissions to the script use `$ ls -l` in the same folder as the script. It should look somewhat like this: 
-  - Before -> **-rwxr--r--** 1 alex alex 3875 Feb 20 20:27 autoUpdate.sh.
-  - After &nbsp;  -> **-rwxr-xr-x** 1 alex alex 3875 Feb 20 20:27 autoUpdate.sh.
+  - Before -> **-rwxr--r--** 1 user user 3875 Feb 20 20:27 autoUpdate.sh.
+  - After &nbsp;  -> **-rwxr-xr-x** 1 user user 3875 Feb 20 20:27 autoUpdate.sh.
 - In order to find any hidden file like .bashrc use `$ ls -a`.
 - .bashrc is usually located at the home directory. You can get there quickly from anywhere with `$ cd ~`
 - There is no need in changing the script itself but you can modify it if you want to.  
