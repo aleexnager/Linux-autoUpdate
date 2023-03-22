@@ -6,7 +6,7 @@ Once you have downloaded autoUpdate.sh and config.cfg files, you must change the
 ```
 $ chmod +x ./autoUpdate.sh
 ```
-There is a short help section already programmed inside the script. You can access this information using: 
+There is a short help section already programmed into the script. You can access this information using: 
 ```
 $ ./autoUpdate.sh --help
 ```
