@@ -10,7 +10,7 @@ There is a short help section already programmed into the script. You can access
 ```
 $ ./autoUpdate.sh --help
 ```
-With your password already set, it is highly recommended to first try the script and verify that everything its working. Execute it for first time with:
+With your password already set, it is highly recommended to first try the script and verify that everything is working. Execute it for first time with:
 ```
 $ ./autoUpdate.sh
 ```
@@ -42,7 +42,7 @@ If you move the script and the config.cfg to the same folder as .bashrc you can 
 ```
 alias update="./autoUpdate.sh"
 ```
-at the end of the .bashrc file.
+at the end of the .bashrc file. You can now use `$ update` to call the program where ever you want.
 ### 4. Combination [RECOMMENDED]
 You can combine some of this methods in order to get various effects. For example, you can combine methods 2 and 3 so that the program will execute everytime you open a bash terminal AND when ever you call it. Just add both options to the .bashrc file.  
 Of course you can also implement different alias for the different options the program has. Just add the correct flag next to the executable the same way you would do it normally from the command promp.
