@@ -1,5 +1,5 @@
 # autoUpdate.sh
-autoUpdate.sh is a bash script in charge of automate your updates in Unix and Unix-like systems. This script in particular includes `wsl.exe --update` for WSL in Windows systems.
+autoUpdate.sh is a bash script in charge of automate your updates in Unix and Unix-like systems. This script in particular includes `wsl.exe --update` for WSL in Windows systems. Obviously this sentence can be removed from the script for Unix-like systems such as Ubuntu.
 
 ## Usage
 Once you have downloaded autoUpdate.sh and config.cfg files, you must change the default password in config.cfg set to 0000. Change this for your current system password, otherwise when the program tries to `sudo -S apt-get update`, an error will pop. Make sure that the script has the `executable 'x'` permission with:
