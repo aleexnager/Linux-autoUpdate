@@ -48,7 +48,7 @@ You can combine some of this methods in order to get various effects. For exampl
 Of course you can also implement different alias for the different options the program has. Just add the correct flag next to the executable the same way you would do it normally from the command promp.
 
 ## FAQ
-- In order to see if you had give the correct permissions to the script use `$ ls -l` in the same folder as the script. It should look somewhat like this: 
+- In order to see if you had given the correct permissions to the script use `$ ls -l` in the same folder as the script. It should look somewhat like this: 
   - Before -> **-rwxr--r--** 1 user user 3875 Feb 20 20:27 autoUpdate.sh.
   - After &nbsp;  -> **-rwxr-xr-x** 1 user user 3875 Feb 20 20:27 autoUpdate.sh.
 - In order to find any hidden file like .bashrc use `$ ls -a`.
