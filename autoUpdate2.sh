@@ -66,10 +66,9 @@ function update() {
 			echo -e "\e[1mWARNING:\e[0m Updates failed to install.\n" 1>&2
 			exit 255
 		fi
-
-		wsl.exe --update
-		exit 0
 	fi
+	wls.exe --update
+	exit 0
 }
 
 #help && info
@@ -84,6 +83,7 @@ function help() {
 	echo " -a, --auto  Change between auto and manual mode."
 	echo "[-option1] [-option2]:"
 	echo " -m, --mute    X    Change the amount of messages the program will provide. X represents one of the options from 0-2 (all,some,non)."
+	echo " -a, --auto		 X    Change between auto and manual mode. X represents one of the options from 0-1 (manual,auto)."
 }
 
 function auto() {
@@ -104,7 +104,7 @@ function info() {
 	echo -e "\n\e[1mINFO\e[0m"
 	auto
 	mute
-	echo -e "\e[1mIf you want more information visit my github repository \"https://github.com/aleexnager/Linux-autoUpdate\".\e[0m\n"
+	echo -e "\e[1mIf you want more information visit my github repository \"https://github.com/aleexnager/autoUpdate-WSL\".\e[0m\n"
 }
 
 function usage_err() {
@@ -118,21 +118,21 @@ for arg in "$@"; do
 		help
 		echo -e "\nDo you need more information?[yes/no]"
 		read answer #stdin
-		if [ "$answer" == "yes" ]; then
+		if [ "$answer" == "yes" ] || [ "$answer" == "y" ]; then
 			info
 			exit 0
 		else
 			exit 0
 		fi
-	elif [ "$arg" == "-a" ] || [ "$arg" == "-auto" ]; then #modes
-		info
+	elif [ "$arg" == "-a" ] || [ "$arg" == "-auto" ] && [ $# -eq 1 ]; then #auto
 		if [ $auto -eq 0 ]; then
 			echo "You are actually in manual mode. Do you want to change to automatic mode? [yes/no]"
 			read answer
-			if [ "$answer" = "no" ]; then
+
+			if [ "$answer" = "no" ] || [ "$answer" == "n" ]; then
 				echo -e "You will stay with the manual version. Use \e[1m$0\e[0m to update your machine\n"
 				exit 0
-			elif [ "$answer" = "yes" ]; then
+			elif [ "$answer" = "yes" ] || [ "$answer" == "y" ]; then
 				echo -e "You have changed to the automatic version. Your machine will update daily.\n"
 				auto=1
 				$(config $prevDate)
@@ -144,10 +144,10 @@ for arg in "$@"; do
 			echo "You are actually in automatic mode. Do you want to change to manual mode? [yes/no]"
 			read answer
 
-			if [ "$answer" = "no" ]; then
+			if [ "$answer" = "no" ] || [ "$answer" == "n" ]; then
 				echo -e "You will stay with the automatic version. Your machine will update daily\n"
 				exit 0
-			elif [ "$answer" = "yes" ]; then
+			elif [ "$answer" = "yes" ] || [ "$answer" == "y" ]; then
 				echo -e "You have changed to the manual version. Use \e[1m$0\e[0m to update your machine.\n"
 				auto=0
 				$(config $prevDate)
@@ -156,7 +156,25 @@ for arg in "$@"; do
 				usage_err
 			fi #auto=1
 		fi  #auto
-	elif [ "$arg" == "-m" ] || [ "$arg" == "--mute" ] && [ $# -eq 1 ]; then
+	elif [ "$arg" == "-a" ] || [ "$arg" == "-auto" ] && [ $# -eq 2 ]; then
+		case $2 in
+		0)
+			echo -e "You have changed to the manual version. Use \e[1m$0\e[0m to update your machine.\n"
+			auto=0
+			$(config $prevDate)
+			exit 0
+			;;
+		1)
+			echo -e "You have changed to the automatic version. Your machine will update daily.\n"
+			auto=1
+			$(config $prevDate)
+			exit 0
+			;;
+		*)
+			usage_err
+			;;
+		esac
+	elif [ "$arg" == "-m" ] || [ "$arg" == "--mute" ] && [ $# -eq 1 ]; then #mute
 		mute
 		exit 0
 	elif [ "$arg" == "-m" ] || [ "$arg" == "--mute" ] && [ $# -eq 2 ]; then
