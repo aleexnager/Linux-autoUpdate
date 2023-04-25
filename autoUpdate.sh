@@ -54,7 +54,7 @@ function update() {
 		fi
 	#mute no message
 	else
-		echo $password | sudo -S apt-get update
+		echo $password | sudo -S apt-get update >/dev/null
 		sudo apt-get upgrade -y
 
 		if [ $? -eq 0 ]; then
